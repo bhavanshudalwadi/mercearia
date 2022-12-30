@@ -1,0 +1,76 @@
+html, body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.tag-line {
+    font-size: 12px;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.m-item {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.navbar-brand{
+    flex-direction: column;
+}
+
+nav form{
+    align-items: center;
+}
+
+nav input.form-control{
+    height: 45px;
+    width: 500px;
+    background-color: #e8f5ff;
+    border: 2px solid #999;
+}
+
+.navbar {
+    background-color: #e3f2fd;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    filter: invert(70%);
+}
+
+footer{
+    background-color: #ccc;
+}
+
+footer .row{
+    padding: 50px 100px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.col-md-4{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: none;
+}
+
+.f-tit{
+    font-weight: bold;
+}
+
+.cr{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #888;
+    color: aliceblue;
+}
+
+footer.col-md-4{
+    display: flex;
+    justify-content: flex-start;
+}

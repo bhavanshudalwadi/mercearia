@@ -1,0 +1,17 @@
+.bg-highlight{
+    background-color: #97e8ec;
+    padding: 0 300px;
+}
+
+.tit{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.tit > div > a{
+    font-size: 15px;
+    text-decoration: none;
+}

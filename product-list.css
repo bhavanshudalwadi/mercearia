@@ -1,0 +1,68 @@
+.MultiCarousel { float: left; overflow: hidden; padding: 0 15px; width: 100%; position:relative; }
+.MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+.MultiCarousel .MultiCarousel-inner .item { float: left; }
+.MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
+.MultiCarousel .leftLst { left:0; }
+.MultiCarousel .rightLst { right:0; }
+.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; }
+
+.card .badge{
+    padding: 5px;
+}
+
+.card {
+    font-weight: bold;
+}
+
+.card-body{
+    padding: 0 10px 10px 10px;
+}
+
+.p-name{
+    font-size: 20px;
+    display: inline-block;
+}
+.p-price{
+    font-size: 18px;
+    display: block;
+}
+.p-mrp{
+    font-size: 18px;
+    display: inline-block;
+    font-weight: normal;
+}
+.p-save{
+    display: block;
+}
+.card-body .btn{
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-viewmore{
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+.view-more{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+    .category-list .card-img-overlay{
+        padding: 3px;
+    }
+    .category-list .card-body{
+        padding: 0 3px 10px 3px;
+    }
+    .category-list .p-name{
+        font-size: 16px;
+        display: inline-block;
+    }
+    .category-list .col-4{
+        padding: 3px;
+    }
+}
