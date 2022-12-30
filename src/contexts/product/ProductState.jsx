@@ -37,13 +37,25 @@ const ProductState = ({ children }) => {
             "id": "6305db8fe0683dca97dc5dd5",
             "img": "amul-pure-ghee-1-l-pouch.jpg",
             "name": "Amul Pure Ghee 1 L (Pouch)",
+            "qty_options": [
+                {
+                    "qty": 1,
+                    "qty_per_unit": 10
+                },
+                {
+                    "qty": 2,
+                    "qty_per_unit": 10
+                }
+            ],
             "qty": 1,
             "product_type": "Carton",
             "qty_per_unit": 10,
             "single_product_type": "Pouch",
+
             "price": 4890.00,
             "mrp": 5050.00,
             "seller": "Pratham Dairy",
+            "brand": "Amul",
             "manufacturer": {
                 "name": "GCMMF Ltd.",
                 "email": "customercare@amul.coop",
@@ -60,9 +72,20 @@ const ProductState = ({ children }) => {
             "product_type": "Carton",
             "qty_per_unit": 36,
             "single_product_type": "Pack",
+            "qty_options": [
+                {
+                    "qty": 1,
+                    "qty_per_unit": 10
+                },
+                {
+                    "qty": 2,
+                    "qty_per_unit": 10
+                }
+            ],
             "price": 3132.00,
             "mrp": 3780.00,
             "seller": "Shriji Maggi",
+            "brand": "Amul",
             "manufacturer": {
                 "name": "GCMMF Ltd.",
                 "email": "customercare@amul.coop",
@@ -79,9 +102,20 @@ const ProductState = ({ children }) => {
             "product_type": "Carton",
             "qty_per_unit": 10,
             "single_product_type": "Pack",
+            "qty_options": [
+                {
+                    "qty": 1,
+                    "qty_per_unit": 10
+                },
+                {
+                    "qty": 2,
+                    "qty_per_unit": 10
+                }
+            ],
             "price": 1600.00,
             "mrp": 1990.00,
             "seller": "Arihant Oil",
+            "brand": "Amul",
             "manufacturer": {
                 "name": "GCMMF Ltd.",
                 "email": "customercare@amul.coop",
@@ -98,9 +132,20 @@ const ProductState = ({ children }) => {
             "product_type": "Carton",
             "qty_per_unit": 5,
             "single_product_type": "Pack",
+            "qty_options": [
+                {
+                    "qty": 1,
+                    "qty_per_unit": 10
+                },
+                {
+                    "qty": 2,
+                    "qty_per_unit": 10
+                }
+            ],
             "price": 2585.00,
             "mrp": 3450.00,
             "seller": "Ravi Enterprise",
+            "brand": "Amul",
             "manufacturer": {
                 "name": "GCMMF Ltd.",
                 "email": "customercare@amul.coop",
@@ -117,9 +162,20 @@ const ProductState = ({ children }) => {
             "product_type": "Carton",
             "qty_per_unit": 20,
             "single_product_type": "Pack",
+            "qty_options": [
+                {
+                    "qty": 1,
+                    "qty_per_unit": 10
+                },
+                {
+                    "qty": 2,
+                    "qty_per_unit": 10
+                }
+            ],
             "price": 600.00,
             "mrp": 760.00,
             "seller": "Subham Coca Cola",
+            "brand": "Amul",
             "manufacturer": {
                 "name": "GCMMF Ltd.",
                 "email": "customercare@amul.coop",
@@ -136,9 +192,20 @@ const ProductState = ({ children }) => {
             "product_type": "Carton",
             "qty_per_unit": 20,
             "single_product_type": "Pack",
+            "qty_options": [
+                {
+                    "qty": 1,
+                    "qty_per_unit": 10
+                },
+                {
+                    "qty": 2,
+                    "qty_per_unit": 10
+                }
+            ],
             "price": 600.00,
             "mrp": 760.00,
             "seller": "Subham Coca Cola",
+            "brand": "Amul",
             "manufacturer": {
                 "name": "GCMMF Ltd.",
                 "email": "customercare@amul.coop",
@@ -155,9 +222,20 @@ const ProductState = ({ children }) => {
             "product_type": "Combo",
             "qty_per_unit": 5,
             "single_product_type": "Carton",
+            "qty_options": [
+                {
+                    "qty": 1,
+                    "qty_per_unit": 10
+                },
+                {
+                    "qty": 2,
+                    "qty_per_unit": 10
+                }
+            ],
             "price": 1225.00,
             "mrp": 1300.00,
             "seller": "Pratham Dairy",
+            "brand": "Amul",
             "manufacturer": {
                 "name": "GCMMF Ltd.",
                 "email": "customercare@amul.coop",
@@ -174,9 +252,20 @@ const ProductState = ({ children }) => {
             "product_type": "Carton",
             "qty_per_unit": 10,
             "single_product_type": "Pouch",
+            "qty_options": [
+                {
+                    "qty": 1,
+                    "qty_per_unit": 10
+                },
+                {
+                    "qty": 2,
+                    "qty_per_unit": 10
+                }
+            ],
             "price": 4890.00,
             "mrp": 5050.00,
             "seller": "Pratham Dairy",
+            "brand": "Amul",
             "manufacturer": {
                 "name": "GCMMF Ltd.",
                 "email": "customercare@amul.coop",
@@ -193,9 +282,20 @@ const ProductState = ({ children }) => {
             "product_type": "Carton",
             "qty_per_unit": 36,
             "single_product_type": "Pack",
+            "qty_options": [
+                {
+                    "qty": 1,
+                    "qty_per_unit": 10
+                },
+                {
+                    "qty": 2,
+                    "qty_per_unit": 10
+                }
+            ],
             "price": 3132.00,
             "mrp": 3780.00,
             "seller": "Shriji Maggi",
+            "brand": "Amul",
             "manufacturer": {
                 "name": "GCMMF Ltd.",
                 "email": "customercare@amul.coop",
@@ -212,9 +312,20 @@ const ProductState = ({ children }) => {
             "product_type": "Carton",
             "qty_per_unit": 10,
             "single_product_type": "Pack",
+            "qty_options": [
+                {
+                    "qty": 1,
+                    "qty_per_unit": 10
+                },
+                {
+                    "qty": 2,
+                    "qty_per_unit": 10
+                }
+            ],
             "price": 1600.00,
             "mrp": 1990.00,
             "seller": "Arihant Oil",
+            "brand": "Amul",
             "manufacturer": {
                 "name": "GCMMF Ltd.",
                 "email": "customercare@amul.coop",
@@ -231,9 +342,20 @@ const ProductState = ({ children }) => {
             "product_type": "Carton",
             "qty_per_unit": 5,
             "single_product_type": "Pack",
+            "qty_options": [
+                {
+                    "qty": 1,
+                    "qty_per_unit": 10
+                },
+                {
+                    "qty": 2,
+                    "qty_per_unit": 10
+                }
+            ],
             "price": 2585.00,
             "mrp": 3450.00,
             "seller": "Ravi Enterprise",
+            "brand": "Amul",
             "manufacturer": {
                 "name": "GCMMF Ltd.",
                 "email": "customercare@amul.coop",
