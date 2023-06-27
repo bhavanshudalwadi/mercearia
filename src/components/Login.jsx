@@ -1,13 +1,9 @@
 import React, { useEffect, useState, useContext } from 'react';
-// import PhoneInput from 'react-phone-input-2';
-// import OtpInput from 'otp-input-react';
 import { auth } from '../../firebase.config';
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
 import userContext from '../contexts/users/userContext';
 import { useNavigate } from 'react-router-dom';
-// import './login.css';
-// import 'react-phone-input-2/lib/style.css';
-
+import './login.css';
 
 const Login = () => {
     const {getUsers} = useContext(userContext);
@@ -21,26 +17,17 @@ const Login = () => {
     const navigate = useNavigate(); 
 
     const onCaptchVarify = () => {
-        // if(!window.recaptchaVerifier){
-        //     window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
-        //         'size': 'invisible',
-        //         'callback': (response) => {
-        //             onSignUp();
-        //         },
-        //         'expired-callback': () => {
+        if(!window.recaptchaVerifier){
+            window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
+                'size': 'invisible',
+                'callback': (response) => {
+                    onSignUp();
+                },
+                'expired-callback': () => {
                   
-        //         }
-        //     }, auth);
-        // }
-        window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
-            'size': 'invisible',
-            'callback': (response) => {
-                onSignUp();
-            },
-            'expired-callback': () => {
-                // Handle expired callback if needed
-            }
-        }, auth);
+                }
+            }, auth);
+        }
         console.log('Re-capcha Set');
     }
 
@@ -58,7 +45,10 @@ const Login = () => {
             setMessage({title: "Enter Phone Number", type: "danger"})
         }else {
             const appVerifier = window.recaptchaVerifier;
-            signInWithPhoneNumber(auth, `+${ph}`, appVerifier)
+
+            console.log(ph);
+
+            signInWithPhoneNumber(auth, `+91${ph}`, appVerifier)
                 .then((confirmationResult) => {
                     window.confirmationResult = confirmationResult;
                     setShowOtp(true);
@@ -68,7 +58,6 @@ const Login = () => {
                     console.log(error.code);
                     setMessage({title: error.code.split("/").pop().replace(/-/g, " "), type: "danger"})
                 });
-
         }
         setLoading(false);
     }
@@ -78,6 +67,8 @@ const Login = () => {
         if(!otp){
             setMessage({title: "Enter otp to verify", type: "danger"})
         }else{
+            console.log(otp);
+
             window.confirmationResult
                 .confirm(otp)
                 .then(async (res) => {
@@ -117,15 +108,15 @@ const Login = () => {
                                     <div className="card-body">
                                         <label htmlFor="mobile-no" className="form-label mt-1">Mobile No:</label>
                                         {/* <PhoneInput country={"in"} value={ph} id="mobile-no" onChange={setPh} required/> */}
-                                        <input value={`+91${ph}`} className='form-control' type="number" maxLength={13} id="phone" name="phone" onChange={setPh} required/>
+                                        <input value={ph} className='form-control' type="number" max={9999999999} maxLength={10} id="phone" name="phone" onChange={e => setPh(e.target.value)} required placeholder='eg. 9845415672'/>
                                     </div>
                                 </div>
                                 <div className="card submit">
                                     <div className="card-body l-submit">
-                                    <button className="btn btn-primary mt-2" type="button" onClick={onSignUp} disabled={loading}>
-                                        {loading && <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>}
-                                        Verify
-                                    </button>
+                                        <button className="btn btn-primary mt-2" type="button" onClick={onSignUp} disabled={loading}>
+                                            {loading && <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>}
+                                            Verify
+                                        </button>
                                     </div>
                                 </div>  
                             </>
@@ -133,11 +124,11 @@ const Login = () => {
                             <>
                                 <div className="card form mb-3">
                                     <div className="card-body">
-                                        <h5 className="text-success fw-bold mt-2">OPT Sent To +{ph}.</h5>
+                                        <h5 className="text-success fw-bold mt-2">OPT Sent To +91{ph}.</h5>
                                         <h6>Is'nt It Your Number ? <button type="button" className="btn btn-link link">Change Number</button></h6>
                                         <label htmlFor="otp" className="form-label">Enter Your OTP:</label>
                                         {/* <OtpInput value={otp} id="otp" OTPLength={6} onChange={setOtp} otpType="number" disabled={false} autoFocus className="opt-container"></OtpInput> */}
-                                        <input value={otp} className='form-control' type="number" id="otp" name="opt" maxLength={6} onChange={setOtp} required/>
+                                        <input value={otp} className='form-control' type="number" id="otp" name="opt" maxLength={6} onChange={e => setOtp(e.target.value)} required placeholder='Enter OTP'/>
                                         {/* <div className="d-flex resend">
                                             <h6>Not get code yet?</h6>
                                             <h6><a className="link" href="#">Resend Code</a></h6>
