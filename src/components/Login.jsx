@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from 'react';
-import PhoneInput from 'react-phone-input-2';
-import OtpInput from 'otp-input-react';
-import './login.css';
-import 'react-phone-input-2/lib/style.css';
+// import PhoneInput from 'react-phone-input-2';
+// import OtpInput from 'otp-input-react';
 import { auth } from '../../firebase.config';
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
 import userContext from '../contexts/users/userContext';
 import { useNavigate } from 'react-router-dom';
+// import './login.css';
+// import 'react-phone-input-2/lib/style.css';
 
 
 const Login = () => {
@@ -70,8 +70,6 @@ const Login = () => {
                 });
 
         }
-
-
         setLoading(false);
     }
 
@@ -118,7 +116,8 @@ const Login = () => {
                                 <div className="card form mb-3">
                                     <div className="card-body">
                                         <label htmlFor="mobile-no" className="form-label mt-1">Mobile No:</label>
-                                        <PhoneInput country={"in"} value={ph} id="mobile-no" onChange={setPh} required/>
+                                        {/* <PhoneInput country={"in"} value={ph} id="mobile-no" onChange={setPh} required/> */}
+                                        <input value={`+91${ph}`} className='form-control' type="number" maxLength={13} id="phone" name="phone" onChange={setPh} required/>
                                     </div>
                                 </div>
                                 <div className="card submit">
@@ -137,7 +136,8 @@ const Login = () => {
                                         <h5 className="text-success fw-bold mt-2">OPT Sent To +{ph}.</h5>
                                         <h6>Is'nt It Your Number ? <button type="button" className="btn btn-link link">Change Number</button></h6>
                                         <label htmlFor="otp" className="form-label">Enter Your OTP:</label>
-                                        <OtpInput value={otp} id="otp" OTPLength={6} onChange={setOtp} otpType="number" disabled={false} autoFocus className="opt-container"></OtpInput>
+                                        {/* <OtpInput value={otp} id="otp" OTPLength={6} onChange={setOtp} otpType="number" disabled={false} autoFocus className="opt-container"></OtpInput> */}
+                                        <input value={otp} className='form-control' type="number" id="otp" name="opt" maxLength={6} onChange={setOtp} required/>
                                         {/* <div className="d-flex resend">
                                             <h6>Not get code yet?</h6>
                                             <h6><a className="link" href="#">Resend Code</a></h6>
