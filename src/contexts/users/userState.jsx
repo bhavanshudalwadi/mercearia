@@ -4,17 +4,35 @@ import userContext from "./userContext";
 const UserState = ({ children }) => {
     const [users, setUsers] = useState([])
         
-    const host = "../../../db";
+    // const host = "../../../db";
 
     const getUsers = async () => {
-        const res = await fetch(`${host}/users.json`,{
-            method: 'GET'
-        })
-        if(res.ok){
-            const json = await res.json()
-            setUsers(json);
-            console.log("Users Updated");
-        }
+        // const res = await fetch(`${host}/users.json`,{
+        //     method: 'GET'
+        // })
+        // if(res.ok){
+        //     const json = await res.json()
+        //     setUsers(json);
+        //     console.log("Users Updated");
+        // }
+        setUsers([
+            {
+                "fname": "Bhavanshu",
+                "lname": "Dalwadi",
+                "phone": "+917383537838",
+                "email": "bhavanshu.programer@gmail.com",
+                "gender": "Male",
+                "dob": "08/11/2002"
+            },
+            {
+                "fname": "Dhruv",
+                "lname": "Dalwadi",
+                "phone": "+918487843494",
+                "email": "dhruvdalwadi4a@gmail.com",
+                "gender": "Male",
+                "dob": "29/10/1995"
+            }
+        ]);
     }
 
     // // Add a Note
