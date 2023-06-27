@@ -1,24 +1,21 @@
 import { useState, useContext } from "react";
-import ProductContext from "./productContext";
+import userContext from "./userContext";
 
-const ProductState = ({ children }) => {
-    const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState(false)
-
+const UserState = ({ children }) => {
+    const [users, setUsers] = useState([])
+        
     const host = "../../../db/";
 
-    const getProducts = async () => {
-        setLoading(true)
-        const res = await fetch(`${host}/products.json`,{
+    const getUsers = async () => {
+        const res = await fetch(`${host}/users.json`,{
             method: 'GET'
         })
         if(res.ok){
             const json = await res.json()
-            setProducts(json);
-            console.log("Products Updated");
+            setUsers(json);
+            console.log("Users Updated");
         }
-        setLoading(false)
-    } 
+    }
 
     // // Add a Note
     // const addNote = async (title, description, tag) => {
@@ -110,10 +107,10 @@ const ProductState = ({ children }) => {
     // }
 
     return (
-        <ProductContext.Provider value={{ products, setProducts, getProducts, loading }}>
+        <userContext.Provider value={{ users, getUsers }}>
             { children }
-        </ProductContext.Provider>
+        </userContext.Provider>
     );
 };
 
-export default ProductState;
+export default UserState;

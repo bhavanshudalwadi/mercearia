@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -11,28 +11,35 @@ import Products from './components/Products';
 import ProductDetails from './components/ProductDetails';
 import Login from './components/Login';
 import CommingSoon from './components/CommingSoon';
+import Cart from './components/Cart';
 
 import ProductState from "./contexts/product/ProductState";
+import UserState from './contexts/users/userState';
+import CartState from './contexts/cart/CartState';
 
 function App() {
   return (
     <div>
-      <ProductState>
-        <BrowserRouter>
-          <Navbar />
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/products/:id" element={<ProductDetails />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/cart" element={<CommingSoon />} />
-              <Route path="/profile" element={<CommingSoon />} />
-            </Routes>
-          </main>
-          <Footer />
-        </BrowserRouter>
-      </ProductState>
+      <CartState>
+        <UserState>
+          <ProductState>
+            <BrowserRouter>
+              <Navbar />
+              <main>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/products" element={<Products />} />
+                  <Route path="/products/:id" element={<ProductDetails />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/cart" element={<Cart />} />
+                  <Route path="/profile" element={<CommingSoon />} />
+                </Routes>
+              </main>
+              <Footer />
+            </BrowserRouter>
+          </ProductState>
+        </UserState>
+      </CartState>
     </div>
   )
 }
