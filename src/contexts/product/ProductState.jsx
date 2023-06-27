@@ -5,7 +5,7 @@ const ProductState = ({ children }) => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(false)
 
-    const host = "../../../db/";
+    const host = "../../../db";
 
     const getProducts = async () => {
         setLoading(true)

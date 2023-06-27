@@ -4,7 +4,7 @@ import userContext from "./userContext";
 const UserState = ({ children }) => {
     const [users, setUsers] = useState([])
         
-    const host = "../../../db/";
+    const host = "../../../db";
 
     const getUsers = async () => {
         const res = await fetch(`${host}/users.json`,{
