@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import PhoneInput from 'react-phone-input-2';
-import OtpInput from 'otp-input-react'
-import './login.css'
+import OtpInput from 'otp-input-react';
+import 'login.css';
 import "react-phone-input-2/lib/style.css";
-import { auth } from '../../firebase.config';
+import auth from '../../firebase.config';
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
 import { useContext } from 'react';
 import userContext from '../contexts/users/userContext';
