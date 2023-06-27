@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import OtpInput from 'otp-input-react';
-import 'login.css';
-import "react-phone-input-2/lib/style.css";
-import auth from '../../firebase.config';
+import './login.css';
+import 'react-phone-input-2/lib/style.css';
+import { auth } from '../../firebase.config';
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
-import { useContext } from 'react';
 import userContext from '../contexts/users/userContext';
 import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
     const {getUsers} = useContext(userContext);
@@ -21,17 +21,26 @@ const Login = () => {
     const navigate = useNavigate(); 
 
     const onCaptchVarify = () => {
-        if(!window.recaptchaVerifier){
-            window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
-                'size': 'invisible',
-                'callback': (response) => {
-                    onSignUp();
-                },
-                'expired-callback': () => {
+        // if(!window.recaptchaVerifier){
+        //     window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
+        //         'size': 'invisible',
+        //         'callback': (response) => {
+        //             onSignUp();
+        //         },
+        //         'expired-callback': () => {
                   
-                }
-            }, auth);
-        }
+        //         }
+        //     }, auth);
+        // }
+        window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
+            'size': 'invisible',
+            'callback': (response) => {
+                onSignUp();
+            },
+            'expired-callback': () => {
+                // Handle expired callback if needed
+            }
+        }, auth);
         console.log('Re-capcha Set');
     }
 
