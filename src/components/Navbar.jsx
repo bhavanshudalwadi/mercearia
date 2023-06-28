@@ -16,7 +16,12 @@ const Navbar = () => {
                 getUsers();
             }else {
                 let arr = users.filter(user => user.phone === JSON.parse(localStorage.getItem('user')).phoneNumber);
-                setUser(arr[0].fname)
+                if(arr.length > 0){
+                    setUser(arr[0].fname)
+                }else {
+                    setUser(JSON.parse(localStorage.getItem('user')).phoneNumber);
+                    navigate('/profile')
+                }
             }
         }
     },[users])

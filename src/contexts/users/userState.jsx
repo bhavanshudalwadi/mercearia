@@ -35,6 +35,13 @@ const UserState = ({ children }) => {
         ]);
     }
 
+    
+
+    const updateUser = (newUser) => {
+        // console.log(newUser);
+        setUsers([...users, JSON.parse(newUser)]);
+    }
+
     // // Add a Note
     // const addNote = async (title, description, tag) => {
     //     // API Call
@@ -125,7 +132,7 @@ const UserState = ({ children }) => {
     // }
 
     return (
-        <userContext.Provider value={{ users, getUsers }}>
+        <userContext.Provider value={{ users, getUsers, updateUser }}>
             { children }
         </userContext.Provider>
     );

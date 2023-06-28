@@ -12,6 +12,7 @@ import ProductDetails from './components/ProductDetails';
 import Login from './components/Login';
 import CommingSoon from './components/CommingSoon';
 import Cart from './components/Cart';
+import Profile from './components/Profile';
 
 import ProductState from "./contexts/product/ProductState";
 import UserState from './contexts/users/userState';
@@ -32,7 +33,7 @@ function App() {
                   <Route path="/products/:id" element={<ProductDetails />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/cart" element={<Cart />} />
-                  <Route path="/profile" element={<CommingSoon />} />
+                  <Route path="/profile" element={<Profile />} />
                 </Routes>
               </main>
               <Footer />
