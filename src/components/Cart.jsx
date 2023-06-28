@@ -61,7 +61,9 @@ const Cart = () => {
         <div className="row">
           <div className="col-md-3"></div>
           <div className="col-md-6">
-            <h3>Cart Items</h3>
+            {cartProducts.length>0 &&
+              <h3 className='my-3'>Cart Items</h3>
+            }
             {cartProducts.length>0?
               cartProducts.map(product => 
                 <div className="card my-3">
@@ -86,7 +88,7 @@ const Cart = () => {
                         <span className="card-text p-price">1 Unit: ₹ {product.qty_options[0].price/product.qty_options[0].qty_per_unit}</span>
                         <span className="text-secondary p-save ms-3">Seller: {product.seller}</span>
                       </div>
-                      <button type="button" className="btn btn-secondary fs-5 d-flex justify-content-between mt-3 " onClick={() => removeFromCart(product.id)} style={{width: 100}}><span>Remove</span><i className="bi bi-minus-circle fs-5"></i></button>
+                      <button type="button" className="btn btn-secondary fs-5 d-flex justify-content-between mt-3 " onClick={() => removeFromCart(product.id)} style={{width: 100}}><span>Remove</span></button>
                     </div>
                   </div>
                 </div>
@@ -97,6 +99,11 @@ const Cart = () => {
                   </div>
                 </div>
               )
+            }
+            {cartProducts.length>0 &&
+              <div className='d-flex justify-content-end'>
+                <button type="button" className="btn btn-primary fs-5 d-flex justify-content-between mb-3"><span>Checkout</span></button>
+              </div>
             }
           </div>
           <div className="col-md-3"></div>
